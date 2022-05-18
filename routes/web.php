@@ -29,14 +29,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Register Routes
          */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
+        Route::get('/register', 'RegisterController@show')->name('register');
+        Route::post('/register', 'RegisterController@register')->name('register');
 
         /**
          * Login Routes
          */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
+        Route::get('/login', 'LoginController@show')->name('login');
+        Route::post('/login', 'LoginController@login')->name('login');
 
     });
 
@@ -44,7 +44,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Logout Routes
          */
-        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+        Route::post('/logout', 'LogoutController@perform')->name('logout');
     });
 });
 
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/{category}/products', [App\Http\Controllers\ProductsController::class, 'index'])->name('product');
+Route::get('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'create'])->name('product');
+Route::post('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'store'])->name('product');

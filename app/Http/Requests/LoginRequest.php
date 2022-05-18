@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-class LoginRequest extends FormRequest
+class LoginRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +21,10 @@ class LoginRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public static  function rules()
     {
         return [
-            'username' => 'required',
+            'email' => 'required|email:rfc,dns|unique:users,email',
             'password' => 'required'
         ];
     }
@@ -42,7 +42,7 @@ class LoginRequest extends FormRequest
         // have name of "username", however, in order to support
         // logging users in with both (username and email)
         // we have to check if user has entered one or another
-        $username = $this->get('username');
+        $username = $this->get('email');
 
         if ($this->isEmail($username)) {
             return [
@@ -51,7 +51,7 @@ class LoginRequest extends FormRequest
             ];
         }
 
-        return $this->only('username', 'password');
+        return $this->only('email', 'password');
     }
 
     /**

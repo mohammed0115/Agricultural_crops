@@ -1,0 +1,23 @@
+
+
+1. sign and sign up 
+2. home page
+
+
+
+3. seller user
+  1. create new product
+  2. create description
+  3. select from list mazat comment best affer
+
+  
+Bayer user
+   all offer
+   new listed product
+
+  
+ - show all product categories 
+ - add comment mazat
+ - show average mount listed as comment mazat
+
+ 

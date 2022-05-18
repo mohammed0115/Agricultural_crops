@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     /**
      * Display login page.
      *
@@ -21,24 +27,24 @@ class LoginController extends Controller
     /**
      * Handle account login request
      *
-     * @param LoginRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(LoginRequest $request)
+    public function login(Request $request)
     {
-        $credentials = $request->getCredentials();
+//        return $request;
+//        $request->validate(LoginRequest::rules());
+        $credentials = $request->only('email', 'password');
+        $user = User::where('email',$request->email)->first();
+//        return $user;
+        if (Auth::attempt($credentials)) {
 
-        if(!Auth::validate($credentials)):
-            return redirect()->to('login')
-                ->withErrors(trans('auth.failed'));
-        endif;
+            return redirect()->route('/');
 
-        $user = Auth::getProvider()->retrieveByCredentials($credentials);
-
-        Auth::login($user);
-
-        return $this->authenticated($request, $user);
+        }else{
+            session()->flash('message', 'Invalid credentials');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -51,6 +57,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+
         return redirect()->intended();
     }
 }
