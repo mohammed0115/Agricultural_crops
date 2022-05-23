@@ -1,6 +1,6 @@
 
 
-1. sign and sign up 
+1. sign and sign up
 2. home page
 
 
@@ -8,16 +8,21 @@
 3. seller user
   1. create new product
   2. create description
+   during creating offer should specify the minimum and maximum amount
   3. select from list mazat comment best affer
+  4. order recieved
+  5. order under delivery
+  6. order complete it and paied subscription
+  7. response time
 
-  
+
 Bayer user
    all offer
    new listed product
 
-  
- - show all product categories 
+
+ - show all product categories
  - add comment mazat
  - show average mount listed as comment mazat
 
- 
+

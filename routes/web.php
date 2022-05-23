@@ -40,11 +40,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     });
 
-    Route::group(['middleware' => ['auth']], function() {
-        /**
-         * Logout Routes
-         */
-        Route::get('/logout', 'LogoutController@perform')->name('logout');
+        Route::group(['middleware' => ['auth']], function() {
+        Route::post('/logout', 'LogoutController@perform')->name('logout');
     });
 });
 
@@ -52,6 +49,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 //Auth::routes();
 
 //Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-Route::get('/{category}/products', [App\Http\Controllers\ProductsController::class, 'index'])->name('product');
+Route::get('/{category}/products', [App\Http\Controllers\ProductsController::class, 'index'])->name('index');
 Route::get('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'create'])->name('product');
+
+Route::get('/{category}/products-step-1',       [App\Http\Controllers\ProductsController::class, 'createStep1'])->name('products-create');
+Route::post('/products-post-step-1', [App\Http\Controllers\ProductsController::class,'PostcreateStep1'])->name('products.post.step.1');
+Route::get('/products-create-step-2', [App\Http\Controllers\ProductsController::class,'createStep2'])->name('products.create.step.2');
+Route::post('/register-post-step-2', [App\Http\Controllers\ProductsController::class,'PostcreateStep2'])->name('products.post.step.2');
+Route::get('/products-create-step-3', [App\Http\Controllers\ProductsController::class,'createStep3'])->name('products.create.step.3');
+Route::post('/products-post-step-3', [App\Http\Controllers\ProductsController::class,'PostcreateStep3'])->name('products.post.step.3');
+
 Route::post('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'store'])->name('product');

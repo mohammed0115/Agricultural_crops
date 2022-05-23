@@ -88,7 +88,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="#">
-                         المشتروات
+                        المشتروات
                         <i class="fas fa-shopping-cart">
                             {{--<span class="badge badge-warning">11</span>--}}
                         </i>
@@ -116,7 +116,7 @@
                         <i class="fa fa-bell ">
                             <span class="badge badge-info">11</span>
                         </i>
-                       الإشعارات
+                        الإشعارات
                     </a>
                 </li>
                 <li class="nav-item">
@@ -138,14 +138,14 @@
 </section>
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y-sm bg-default ">
-<div class="container-fluid">
-    <div class="row">
+    <div class="container-fluid">
+        <div class="row">
 
 
 
-                @foreach ($category as  $cate)
+            @foreach ($category as  $cate)
 
-                   <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-3">
                     <figure class="card card-product">
                         {{--<span class="badge-new"> NEW </span>--}}
                         <div class="img-wrap">
@@ -164,9 +164,9 @@
                     </figure> <!-- card // -->
                 </div> <!-- col // -->
 
-               @endforeach
+            @endforeach
 
-   </div>
+        </div>
     </div>
     </div>
     </div><!-- container //  -->
