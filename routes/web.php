@@ -44,14 +44,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Logout Routes
          */
-        Route::post('/logout', 'LogoutController@perform')->name('logout');
+        Route::get('/logout', 'LogoutController@perform')->name('logout');
     });
 });
 
 
 //Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 Route::get('/{category}/products', [App\Http\Controllers\ProductsController::class, 'index'])->name('product');
 Route::get('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'create'])->name('product');
 Route::post('/{category}/products/add', [App\Http\Controllers\ProductsController::class, 'store'])->name('product');

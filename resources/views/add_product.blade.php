@@ -33,47 +33,92 @@
 </head>
 <body>
 <section class="header-main">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-3">
-                <div class="brand-wrap">
-                    <img class="logo" src="{{asset('home/assets/images/logos/crops1.png')}}">
-                    <h2 class="logo-text">Agricultural crops</h2>
-                </div> <!-- brand-wrap.// -->
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <form action="#" class="search-wrap">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+
+    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <ul>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{asset('home/assets/images/avatars/user.png')}}" class="avatar" alt="">
+
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">بياتي الشخصيه</a>
+                    <a class="dropdown-item" href="#">الضبط</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">تسجيل الخروج</a>
+                </div>
+            </li>
+        </ul>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-home"></i>
+                        الرئيسية
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-danger">11</span>
+                        </i>
+                        عروضي
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        <i class="fa fa-envelope-o">
+                            {{--<span class="badge badge-warning">11</span>--}}
+                        </i>
+                        تصفح علي العروض الاخرى
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-primary">11</span>
+                        </i>
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                </form> <!-- search-wrap .end// -->
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-sm-6">
-                <div class="widgets-wrap d-flex justify-content-end">
-                    <div class="widget-header">
-                        <a href="#" class="icontext">
-                            <a href="#" class="btn btn-primary m-btn m-btn--icon m-btn--icon-only">
-                                <i class="fa fa-home"></i>
-                            </a>
-                        </a>
-                    </div> <!-- widget .// -->
-                    <div class="widget-header dropdown">
-                        <a href="#" class="ml-3 icontext" data-toggle="dropdown" data-offset="20,10">
-                            <img src="{{asset('home/assets/images/avatars/user.png')}}" class="avatar" alt="">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-sign-out-alt"></i> Logout</a>
-                        </div> <!--  dropdown-menu .// -->
-                    </div> <!-- widget  dropdown.// -->
-                </div>	<!-- widgets-wrap.// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
-    </div> <!-- container.// -->
+                </li>
+            </ul>
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-bell ">
+                            <span class="badge badge-info">11</span>
+                        </i>
+                        الإشعارات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-envelope">
+                            <span class="badge badge-success">11</span>
+                        </i>
+                        الرسائل
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 </section>
 <!-- ========================= SECTION CONTENT ========================= -->
 <div class="container">
@@ -83,18 +128,21 @@
     <div class="col-12 ">
     <form>
         <!-- Text input-->
-        <div class="form-group">
+        <div class="row col-12">
+        <div class="form-group col-6">
             <label  for="product_name">PRODUCT NAME</label>
             <input id="product_name" name="name" placeholder="PRODUCT NAME" class="form-control" required="" type="text">
         </div>
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="product_name_fr">PRODUCT DESCRIPTION </label>
             <input id="product_name_fr" name="description" placeholder="PRODUCT DESCRIPTION FR" class="form-control input-md" required="" type="text">
         </div>
+        </div>
 
         <!-- Select Basic -->
-        <div class="form-group">
+        <div class="row col-12">
+        <div class="form-group col-6">
             <label class=" control-label" for="product_categorie">PRODUCT CATEGORY</label>
                 <select id="product_categorie" name="category_id" class="form-control">
                     @foreach ($categories as  $cate)
@@ -104,42 +152,42 @@
         </div>
 
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="available_quantity">AVAILABLE QUANTITY</label>
             <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
         </div>
-
+        </div>
+        <div class="row col-12">
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="product_weight">PRODUCT WEIGHT</label>
             <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
         </div>
 
-
-
-
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>
             <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text">
 
         </div>
-
+        </div>
+        <div class="row col-12">
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="stock_alert">STOCK ALERT</label>
             <input id="stock_alert" name="stock_alert" placeholder="STOCK ALERT" class="form-control input-md" required="" type="text">
         </div>
 
         <!-- Search input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="stock_critical">STOCK CRITICAL</label>
             <input id="stock_critical" name="stock_critical" placeholder="STOCK CRITICAL" class="form-control input-md" required="" type="search">
 
         </div>
-
+        </div>
+        <div class="row col-12">
         <!-- Search input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="tutorial">TUTORIAL</label>
             <input id="tutorial" name="tutorial" placeholder="TUTORIAL" class="form-control input-md" required="" type="search">
         </div>
@@ -147,9 +195,10 @@
 
 
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group col-6">
             <label class=" control-label" for="online_date">ONLINE DATE</label>
             <input id="online_date" name="online_date" placeholder="ONLINE DATE" class="form-control input-md" required="" type="text">
+        </div>
         </div>
 
         <!-- Text input-->

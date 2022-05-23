@@ -33,47 +33,136 @@
 </head>
 <body>
 <section class="header-main">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-3">
-                <div class="brand-wrap">
-                    <img class="logo" src="{{asset('home/assets/images/logos/crops1.png')}}">
-                    <h2 class="logo-text">Agricultural crops</h2>
-                </div> <!-- brand-wrap.// -->
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <form action="#" class="search-wrap">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+    {{--<div class="container">--}}
+        {{--<div class="row align-items-center">--}}
+            {{--<div class="col-lg-3">--}}
+                {{--<div class="brand-wrap">--}}
+                    {{--<img class="logo" src="{{asset('home/assets/images/logos/crops1.png')}}">--}}
+                    {{--<h2 class="logo-text">Agricultural crops</h2>--}}
+                {{--</div> <!-- brand-wrap.// -->--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-6 col-sm-6">--}}
+                {{--<form action="#" class="search-wrap">--}}
+                    {{--<div class="input-group">--}}
+                        {{--<input type="text" class="form-control" placeholder="Search">--}}
+                        {{--<div class="input-group-append">--}}
+                            {{--<button class="btn btn-primary" type="submit">--}}
+                                {{--<i class="fa fa-search"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</form> <!-- search-wrap .end// -->--}}
+            {{--</div> <!-- col.// -->--}}
+            {{--<div class="col-lg-3 col-sm-6">--}}
+                {{--<div class="widgets-wrap d-flex justify-content-end">--}}
+                    {{--<div class="widget-header">--}}
+                        {{--<a href="#" class="icontext">--}}
+                            {{--<a href="#" class="btn btn-primary m-btn m-btn--icon m-btn--icon-only">--}}
+                                {{--<i class="fa fa-home"></i>--}}
+                            {{--</a>--}}
+                        {{--</a>--}}
+                    {{--</div> <!-- widget .// -->--}}
+                    {{--<div class="widget-header dropdown">--}}
+                        {{--<a href="#" class="ml-3 icontext" data-toggle="dropdown" data-offset="20,10">--}}
+                            {{--<img src="{{asset('home/assets/images/avatars/user.png')}}" class="avatar" alt="">--}}
+                        {{--</a>--}}
+                        {{--<div class="dropdown-menu dropdown-menu-right">--}}
+                            {{--<a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-sign-out-alt"></i> Logout</a>--}}
+                        {{--</div> <!--  dropdown-menu .// -->--}}
+                    {{--</div> <!-- widget  dropdown.// -->--}}
+                {{--</div>	<!-- widgets-wrap.// -->--}}
+            {{--</div> <!-- col.// -->--}}
+        {{--</div> <!-- row.// -->--}}
+    {{--</div> <!-- container.// -->--}}
+
+
+
+    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <ul>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{asset('home/assets/images/avatars/user.png')}}" class="avatar" alt="">
+
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">بياتي الشخصيه</a>
+                    <a class="dropdown-item" href="#">الضبط</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">تسجيل الخروج</a>
+                </div>
+            </li>
+        </ul>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-home"></i>
+                        الرئيسية
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-danger">11</span>
+                        </i>
+                        عروضي
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        <i class="fa fa-envelope-o">
+                            {{--<span class="badge badge-warning">11</span>--}}
+                        </i>
+                        تصفح علي العروض الاخرى
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-primary">11</span>
+                        </i>
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                </form> <!-- search-wrap .end// -->
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-sm-6">
-                <div class="widgets-wrap d-flex justify-content-end">
-                    <div class="widget-header">
-                        <a href="#" class="icontext">
-                            <a href="#" class="btn btn-primary m-btn m-btn--icon m-btn--icon-only">
-                                <i class="fa fa-home"></i>
-                            </a>
-                        </a>
-                    </div> <!-- widget .// -->
-                    <div class="widget-header dropdown">
-                        <a href="#" class="ml-3 icontext" data-toggle="dropdown" data-offset="20,10">
-                            <img src="{{asset('home/assets/images/avatars/user.png')}}" class="avatar" alt="">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-sign-out-alt"></i> Logout</a>
-                        </div> <!--  dropdown-menu .// -->
-                    </div> <!-- widget  dropdown.// -->
-                </div>	<!-- widgets-wrap.// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
-    </div> <!-- container.// -->
+                </li>
+            </ul>
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-bell ">
+                            <span class="badge badge-info">11</span>
+                        </i>
+                       الإشعارات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-envelope">
+                            <span class="badge badge-success">11</span>
+                        </i>
+                        الرسائل
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
 </section>
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y-sm bg-default ">
@@ -89,12 +178,12 @@
                         {{--<span class="badge-new"> NEW </span>--}}
                         <div class="img-wrap">
                             <img src="{{asset($cate->slug )}}">
-                            <a class="btn-overlay" href="{{'/'.$cate->id.'/products'}}"><i class="fa fa-search-plus"></i> Quick view</a>
+                            <a class="btn-overlay" href="{{'/'.$cate->id.'/products'}}"><i class="fa fa-search-plus"></i> عرض الأصناف المتاحة</a>
                         </div>
                         <figcaption class="info-wrap">
                             <a href="#" class="title">{{$cate->name}}</a>
                             <div class="action-wrap">
-                                <a href="{{'/'.$cate->id.'/products/add'}}" class="btn btn-primary btn-sm float-right">  Add new </a>
+                                <a href="{{'/'.$cate->id.'/products/add'}}" class="btn btn-primary btn-sm float-right">  إضافه صنف جديد </a>
                                 <div class="price-wrap h5">
                                     {{--<span class="price-new">$1280</span>--}}
                                 </div> <!-- price-wrap.// -->

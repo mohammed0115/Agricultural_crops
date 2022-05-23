@@ -39,7 +39,7 @@ class LoginController extends Controller
 //        return $user;
         if (Auth::attempt($credentials)) {
 
-            return redirect()->route('/');
+            return redirect('/');
 
         }else{
             session()->flash('message', 'Invalid credentials');
