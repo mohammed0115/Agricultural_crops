@@ -106,12 +106,24 @@ class ProductsController extends Controller
      */
     public function PostcreateStep1(Request $request)
     {
+//        return $request;
         $validatedData = $request->validate([
-            'name' => 'required|unique:productss',
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
         ]);
         if(empty($request->session()->get('products'))){
             $products = new product();
-            $products->fill($validatedData);
+            $products->fill([
+                'name' =>$request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+                'category_id' => $request->category_id,
+                'category'=>$request->category,
+                'releaseDate'=>now()
+            ]);
+            $products->save();
             $request->session()->put('products', $products);
         }else{
             $products = $request->session()->get('products');

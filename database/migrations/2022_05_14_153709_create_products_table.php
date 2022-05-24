@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id')->unsigned()->index();
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->string('category');
             $table->string('description');
             $table->string('releaseDate');

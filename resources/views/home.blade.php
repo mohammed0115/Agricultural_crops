@@ -17,6 +17,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
     {{--<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>--}}
     <link href="{{asset('home/assets/css/OverlayScrollbars.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{asset('css/notification.css')}}" type="text/css" rel="stylesheet"/>
+
     <!-- Font awesome 5 -->
     <style>
         .avatar {
@@ -35,7 +37,7 @@
     <!-- custom style -->
 </head>
 <body>
-<section class="header-main">
+<section class="header-main" style="text-align: right">
     <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
         <ul>
             <li class="nav-item dropdown">
@@ -66,7 +68,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -111,26 +113,79 @@
                 </li>
             </ul>
             <ul class="navbar-nav ">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
+                <li class="nav-item icon-button p-3">
+                    <a class="nav-link " href="#" title="الإشعارات" id="notification" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-bell ">
-                            <span class="badge badge-info">11</span>
+                            <span class="icon-button__badge">11</span>
                         </i>
-                       الإشعارات
+
                     </a>
+
+                        <ul class="dropdown-menu notifications" aria-labelledby="notification" role="menu" >
+
+                            <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
+                            </div>
+                            <li class="divider"></li>
+                            <div class="notifications-wrapper">
+                                <a class="content" href="#">
+
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+
+                                </a>
+                                <a class="content" href="#">
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+                                </a>
+                                <a class="content" href="#">
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+                                </a>
+                                <a class="content" href="#">
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+
+                                </a>
+                                <a class="content" href="#">
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+                                </a>
+                                <a class="content" href="#">
+                                    <div class="notification-item">
+                                        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                                        <p class="item-info">Marketing 101, Video Assignment</p>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <li class="divider"></li>
+                            <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+                        </ul>
+
+
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
+                <li class="nav-item icon-button px-3" title="الرسائل">
+                    <a class="nav-link " href="#">
                         <i class="fa fa-envelope">
-                            <span class="badge badge-success">11</span>
+                            <span class="icon-button__badge">25</span>
                         </i>
-                        الرسائل
+
                     </a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0 px-2">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-3 my-sm-0 m-1" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -155,7 +210,7 @@
                         <figcaption class="info-wrap">
                             <a href="#" class="title">{{$cate->name}}</a>
                             <div class="action-wrap">
-                                <a href="{{'/'.$cate->id.'/products/add'}}" class="btn btn-primary btn-sm float-right">  إضافه صنف جديد </a>
+                                <a href="{{'/'.$cate->id.'/products-step-1'}}" class="btn btn-primary btn-sm float-right">  إضافه صنف جديد </a>
                                 <div class="price-wrap h5">
                                     {{--<span class="price-new">$1280</span>--}}
                                 </div> <!-- price-wrap.// -->

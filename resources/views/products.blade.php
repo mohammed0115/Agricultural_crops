@@ -79,9 +79,6 @@
 <section class="section-content padding-y-sm bg-default ">
     <div class="container-fluid">
         <div class="row">
-
-
-
             @foreach ($products as  $product)
 
                 <div class="col-lg-3 col-md-3">

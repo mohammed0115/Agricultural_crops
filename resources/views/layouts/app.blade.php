@@ -17,6 +17,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
     {{--<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>--}}
     <link href="{{asset('home/assets/css/OverlayScrollbars.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{asset('css/steppercss.css')}}" type="text/css" rel="stylesheet"/>
     <!-- Font awesome 5 -->
     <style>
         .avatar {
@@ -46,7 +47,9 @@
 
                 <div class="dropdown-menu  " aria-labelledby="navbarDropdown">
                     <a id="navbarDropdown" class="nav-link " >
+                        @if(Auth::user())
                         {{ Auth::user()->email }}
+                        @endif
                     </a>
                     <a class="dropdown-item" href="#"> بياتي الشخصيه<i class="fa fa-fw fa-user p-3" aria-hidden="true"></i> </a>
                     <a class="dropdown-item" href="#"> الاعدادات <i class="fa fa-tasks p-4" aria-hidden="true"> </i> </a>
@@ -149,6 +152,7 @@
 <script src="{{asset('home/assets/js/jquery-2.0.0.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('home/assets/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('home/assets/js/OverlayScrollbars.js')}}" type="text/javascript"></script>
+<script href="{{asset('js/stepper.js')}}" type="text/javascript" ></script>
 <script>
 	$(function() {
 	//The passed argument has to be at least a empty object or a object with your desired options

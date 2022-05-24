@@ -218,9 +218,6 @@
             <label class="control-label" for="enable_display">IMAGE</label>
             <input id="filebutton" name="filebutton" class="input-file" type="file">
         </div>
-
-
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
