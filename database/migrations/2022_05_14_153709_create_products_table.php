@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('releaseDate');
             $table->float('price');
+            $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
